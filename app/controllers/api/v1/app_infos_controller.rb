@@ -1,4 +1,4 @@
-class AppInfosController < ApplicationController
+class Api::V1::AppInfosController < ApplicationController
   before_action :set_app_info, only: [:show, :update, :destroy]
 
   # GET /app_infos

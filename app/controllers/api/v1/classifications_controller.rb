@@ -1,4 +1,4 @@
-class ClassificationsController < ApplicationController
+class Api::V1::ClassificationsController < ApplicationController
   before_action :set_app_info, only: [:show]
 
   def index
