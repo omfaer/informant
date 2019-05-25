@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_062847) do
+ActiveRecord::Schema.define(version: 2019_05_25_074036) do
 
   create_table "app_infos", force: :cascade do |t|
     t.string "app_name"
@@ -27,6 +27,30 @@ ActiveRecord::Schema.define(version: 2019_05_24_062847) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["app_info_id"], name: "index_classifications_on_app_info_id"
+  end
+
+  create_table "permissions", force: :cascade do |t|
+    t.string "permission_name"
+    t.integer "app_info_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["app_info_id"], name: "index_permissions_on_app_info_id"
+  end
+
+  create_table "receivers", force: :cascade do |t|
+    t.string "receiver_name"
+    t.integer "app_info_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["app_info_id"], name: "index_receivers_on_app_info_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "service_name"
+    t.integer "app_info_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["app_info_id"], name: "index_services_on_app_info_id"
   end
 
 end

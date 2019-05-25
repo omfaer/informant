@@ -20,9 +20,24 @@ class Api::V1::AppInfosController < ApplicationController
   end
 
   # Fonksiyon ismi is malware olarak değiştirilebilir.
-  def psr_hash
+  def is_malware
     @app_info = AppInfo.find_by(params.permit(:psr_hash)).classification.classification_name
     render json: @app_info
+  end
+
+  def permissions
+    @app_permissions = AppInfo.find_by(params.permit(:psr_hash)).permissions
+    render json: @app_permissions
+  end
+
+  def services
+    @app_services = AppInfo.find_by(params.permit(:psr_hash)).services
+    render json: @app_services
+  end
+
+  def receivers
+    @app_receivers = AppInfo.find_by(params.permit(:psr_hash)).receivers
+    render json: @app_receivers
   end
 
   # POST /app_infos
