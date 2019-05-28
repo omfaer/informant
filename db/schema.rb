@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_25_074036) do
+ActiveRecord::Schema.define(version: 2019_05_27_083159) do
 
   create_table "app_infos", force: :cascade do |t|
     t.string "app_name"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 2019_05_25_074036) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["app_info_id"], name: "index_services_on_app_info_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
