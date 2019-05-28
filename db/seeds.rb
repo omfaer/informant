@@ -29,3 +29,6 @@ Service.create(service_name: "com.sdatam.musicplayer.NotificationService", app_i
 Service.create(service_name: "com.sdatam.mesp.MespService", app_info_id: 2)
 
 Receiver.create(receiver_name: "com.sdatam.musicplayer.HeadsetReceiver", app_info_id: 2)
+
+User.create(name: 'omer' , password: '123123123' , password_confirmation: '123123123')
+
