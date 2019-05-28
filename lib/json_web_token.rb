@@ -12,7 +12,7 @@ module JsonWebToken
   end
 
   private
-    def secret_key
+    def self.secret_key
       Rails.application.secrets&.secret_key_base || Rails.application.credentials&.secret_key_base
     end
 end
