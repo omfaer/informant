@@ -1,11 +1,6 @@
 class Api::V1::ClassificationsController < ApplicationController
   before_action :set_app_info, only: [:show]
 
-  def index
-    @classifications = Classification.all
-
-    render json: @classifications
-  end
 
     # GET /app_infos/1
   def show

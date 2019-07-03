@@ -1,12 +1,6 @@
 class Api::V1::PermissionsController < ApplicationController
   before_action :set_app_info, only: [:show]
 
-  def index
-    @permissions = Permission.all
-
-    render json: @permissions
-  end
-
     # GET /app_infos/1
   def show
     render json: @permission
