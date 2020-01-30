@@ -1,8 +1,7 @@
 class Api::V1::AppInfosController < ApplicationController
-  before_action :set_app_info, only: [:show]
+  before_action :get_app_info, only: [:show]
   before_action :is_record, only: [:is_malware, :p_hash, :permissions, :services, :receivers]
 
-  # GET /app_infos/1
   def show
     render json: @app_info
   end
@@ -28,8 +27,7 @@ class Api::V1::AppInfosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_app_info
+    def get_app_info
       @app_info = AppInfo.find(params[:id])
     end
 
@@ -42,7 +40,6 @@ class Api::V1::AppInfosController < ApplicationController
       end
     end
 
-    # Only allow a trusted parameter "white list" through.
     def app_info_params
       params.require(:app_info).permit(:app_name, :package_name, :p_hash)
     end

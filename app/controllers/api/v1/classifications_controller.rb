@@ -1,8 +1,6 @@
 class Api::V1::ClassificationsController < ApplicationController
-  before_action :set_app_info, only: [:show]
+  before_action :get_classification, only: [:show]
 
-
-    # GET /app_infos/1
   def show
     render json: @classification
   end
@@ -10,7 +8,7 @@ class Api::V1::ClassificationsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_app_info
+    def get_classification
       @classification = Classification.find(params[:id])
     end
 end

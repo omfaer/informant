@@ -1,7 +1,6 @@
 class Api::V1::PermissionsController < ApplicationController
-  before_action :set_app_info, only: [:show]
+  before_action :get_permission, only: [:show]
 
-    # GET /app_infos/1
   def show
     render json: @permission
   end
@@ -13,7 +12,7 @@ class Api::V1::PermissionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_app_info
+    def get_permission
       @permission = Permission.find(params[:id])
     end
 end
