@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :permissions do
         get 'app_permissions', on: :collection
       end
+      resources :users
     end
   end
   
