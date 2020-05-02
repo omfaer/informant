@@ -16,6 +16,9 @@ Rails.application.routes.draw do
         get 'app_permissions', on: :collection
       end
       resources :users
+      resources :links do 
+        get 'scan', on: :collection
+      end
     end
   end
   
